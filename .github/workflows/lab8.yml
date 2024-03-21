@@ -7,7 +7,7 @@ jobs:
   commands_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Set environment variable with "key" as "VARIABLE_NAME" and "value" as KodeKloud 
+      - name: Set environment variable with "key" as "foo" and "value" as "bar" 
         run: echo ????????
 
       - name: Echo the environment variable from previous step
