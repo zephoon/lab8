@@ -1,0 +1,36 @@
+name: Workflow Commands
+
+on:
+    ????????
+
+jobs:
+  commands_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment variable with "key" as "VARIABLE_NAME" and "value" as KodeKloud 
+        run: echo ????????
+
+      - name: Echo the environment variable from previous step
+        run: echo "Hello, ????????"
+
+      - name: Mask the "api_key" within this steps's environment variable and echo it
+        env:
+          api_key: 1aO764b_4e59_p@$Sw0RdAStvdf-19ofvs4F
+        run: |
+          echo "Un-Masked key = $api_key"
+          echo ???????
+
+      - name: Create a warning Log for this message "This is a warning message."
+        run: echo ???????
+
+      - name: Create an error annotation with following parameters, file=app.py line=49 message=nullValue 
+        run: echo ??????
+
+      - name: Set an output with "key" as LUCKY_NUMBER and "value" as 1234567
+        run: echo ???????
+
+      - name: Echo the output set in the previous step
+        run: echo ????????
+
+      - name: Create a Job Summary as "Exploring Workflow Commands :thumbsup:"
+        run: echo ????????
