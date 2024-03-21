@@ -27,6 +27,7 @@ jobs:
         run: echo ??????
 
       - name: Set an output with "key" as LUCKY_NUMBER and "value" as 1234567
+        id: lucky_number_output
         run: echo ???????
 
       - name: Echo the output set in the previous step
