@@ -10,7 +10,7 @@ jobs:
       - name: Set environment variable with "key" as "foo" and "value" as "bar" 
         run: echo ????????
 
-      - name: Echo the environment variable from previous step
+      - name: Echo the environment variable "foo" from previous step
         run: echo "Hello, ????????"
 
       - name: Mask the "api_key" within this steps's environment variable and echo it
