@@ -1,38 +1,39 @@
 name: Workflow Commands
 
 on:
-    ????????
+  push:
+  workflow_dispatch:
 
 jobs:
   commands_job:
     runs-on: ubuntu-latest
     steps:
       - name: Set environment variable with "key" as "foo" and "value" as "bar" 
-        run: echo ????????
+        run: echo "foo='bar'" >> $GITHUB_ENV
 
       - name: Echo the environment variable "foo" from previous step
-        run: echo "Hello, ????????"
+        run: echo "Hello, $foo"
 
       - name: Mask the "api_key" within this steps's environment variable and echo it
         env:
           api_key: 1aO764b_4e59_p@$Sw0RdAStvdf-19ofvs4F
         run: |
           echo "Un-Masked key = $api_key"
-          echo ???????
+          echo ::add-mask::$api_key
           echo "Masked key = $api_key"
 
       - name: Create a warning Log for this message "This is a warning message."
-        run: echo ???????
+        run: echo "::warning::This is a warning message."
 
       - name: Create an error annotation with following parameters, file=app.py line=49 message=nullValue 
-        run: echo ??????
+        run: echo "::error file=app.py line=49 message=nullValue"
 
       - name: Set an output with "key" as "LUCKY_NUMBER" and "value" as "1234567"
         id: lucky_number_step
-        run: echo ???????
+        run: echo "LUCKY_NUMBER=1234567" >> $GITHUB_OUTPUT
 
       - name: Echo the output set in the previous step
-        run: echo "My lucky number is ????????"
+        run: echo "My lucky number is ${{ steps.lucky_number_step.outputs.LUCKY_NUMBER }}"
 
       - name: Create a Job Summary as "Exploring Workflow Commands :thumbsup:"
-        run: echo ????????
+        run: echo "Exploring Workflow Commands :thumbsup:" >> $GITHUB_STEP_SUMMARY
