@@ -26,7 +26,7 @@ jobs:
         run: echo "::warning::This is a warning message."
 
       - name: Create an error annotation with following parameters, file=app.py line=49 message=nullValue 
-        run: echo "::error file=app.py line=49 message=nullValue"
+        run: echo "::error file=app.py,line=49::nullValue"
 
       - name: Set an output with "key" as "LUCKY_NUMBER" and "value" as "1234567"
         id: lucky_number_step
@@ -36,4 +36,5 @@ jobs:
         run: echo "My lucky number is ${{ steps.lucky_number_step.outputs.LUCKY_NUMBER }}"
 
       - name: Create a Job Summary as "Exploring Workflow Commands :thumbsup:"
+
         run: echo "Exploring Workflow Commands :thumbsup:" >> $GITHUB_STEP_SUMMARY
